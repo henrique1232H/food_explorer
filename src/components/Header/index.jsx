@@ -1,21 +1,22 @@
 import { Container, Back, MobileButton } from "./style";
 import Input from "../../components/Input"
 import Button from "../../components/Button"
-import { Link } from "react-router-dom";
-import { IoFlaskOutline, IoMenu } from "react-icons/io5";
+import { IoMenu } from "react-icons/io5";
 import { PiReceipt } from "react-icons/pi";
 import logoUser from "../../assets/logo.svg"
 import logoAdmin from "../../assets/logoAdmin.svg"
 import { useState } from "react";
 import { PiSignOutBold } from "react-icons/pi";
 import { IoSearchSharp } from "react-icons/io5";
+import Menu from "../Menu";
 
 
 export default function Header() {
 
     const [isAdmin, setIsAdmin] = useState(false);
     const [count, setPedido] = useState(0);
-    const [removePlaceholder, setRemovePlaceholder] = useState(false)
+    const [removePlaceholder, setRemovePlaceholder] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false)
 
     const handleRemovePlaceholder = (event) => {
         if(event !== "") {
@@ -24,12 +25,17 @@ export default function Header() {
         setRemovePlaceholder(!removePlaceholder)
     }
 
+    const handleMenu = () => {
+        setOpenMenu(!openMenu)
+    }
+
+
     return (
         <Container>
             <div>
 
                 <MobileButton>
-                    <button>
+                    <button onClick={handleMenu}>
                         <IoMenu />
                     </button>
                 </MobileButton>
@@ -66,6 +72,15 @@ export default function Header() {
                     <PiSignOutBold />
                 </Back>
 
+
+                    {
+                        openMenu ? <Menu closeMenu={handleMenu} isAdmin={isAdmin}/> : ""
+                    }
+
+                
+
+                
+                
 
             </div>
         </Container>
