@@ -32,7 +32,7 @@ export default createGlobalStyle`
         font-weight: 400;
     }
 
-    label, input::placeholder {
+    label, input::placeholder, .placeholderText {
         font-family: "Roboto", sans-serif;
         font-weight: 400;
         font-size: 16px;

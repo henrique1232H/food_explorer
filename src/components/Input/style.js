@@ -1,20 +1,49 @@
 import styled from "styled-components";
 
-export const Container = styled.input`
+
+
+export const Container = styled.div`
     background: ${({theme}) => theme.COLORS.DARK.DARK_900};
     border: none;
-    padding: 1.4rem 1.6rem;
-    color: #fff;
     border-radius: 0.8rem;
     width: 100%;
-    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 
-    &::placeholder {
+    > div {
+        position: absolute;
         color: ${({theme}) => theme.COLORS.LIGHT.LIGHT_500};
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        z-index: 1;
+     
+        
+    }
+    
+    > input {
+        background: none;
+        border: none;
+        width: 100%;
+        padding: 1.4rem 1.6rem;
+        border-radius: 0.8rem;
+        color: #fff;
+        outline: none;
+
+
     }
 
-    &:focus {
+    > input::placeholder {
+        color: ${({theme}) => theme.COLORS.LIGHT.LIGHT_500};
+        text-align: center;
+    }
+
+    > input:focus {
         border: 1px outset #fff;
     }
+
 
 `

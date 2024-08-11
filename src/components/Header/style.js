@@ -36,7 +36,7 @@ export const Container = styled.header`
                 display: none;
             }
 
-            > input {
+            > div:nth-child(3) {
                 display: none;
                 visibility: hidden;
             }

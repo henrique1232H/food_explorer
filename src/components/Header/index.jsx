@@ -2,18 +2,27 @@ import { Container, Back, MobileButton } from "./style";
 import Input from "../../components/Input"
 import Button from "../../components/Button"
 import { Link } from "react-router-dom";
-import { IoMenu } from "react-icons/io5";
+import { IoFlaskOutline, IoMenu } from "react-icons/io5";
 import { PiReceipt } from "react-icons/pi";
 import logoUser from "../../assets/logo.svg"
 import logoAdmin from "../../assets/logoAdmin.svg"
 import { useState } from "react";
 import { PiSignOutBold } from "react-icons/pi";
+import { IoSearchSharp } from "react-icons/io5";
 
 
 export default function Header() {
 
     const [isAdmin, setIsAdmin] = useState(false);
-    const [count, setPedido] = useState(0)
+    const [count, setPedido] = useState(0);
+    const [removePlaceholder, setRemovePlaceholder] = useState(false)
+
+    const handleRemovePlaceholder = (event) => {
+        if(event !== "") {
+            return
+        }
+        setRemovePlaceholder(!removePlaceholder)
+    }
 
     return (
         <Container>
@@ -29,12 +38,18 @@ export default function Header() {
                     <img src={!isAdmin ? logoUser : logoAdmin} alt="Logo" />
                 </div>
 
-                <Input  placeholder="Busque por pratos ou ingredientes"/>
+                <Input 
+                    onFocus={(e) => handleRemovePlaceholder(e.target.value)}
+                    onBlur={(e) => handleRemovePlaceholder(e.target.value)}
+            
+                    placeholder={removePlaceholder}  
+                    icon={IoSearchSharp} 
+                    text="Busque por pratos ou ingredientes"/>
 
                 {
                     isAdmin ? 
                     <Button text="Novo prato"/> 
-                    : 
+                    :
                     <Button text="Pedidos" receipt count={count} icon={PiReceipt}/>
                 }
 
