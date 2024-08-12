@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.footer`
     background: ${({theme}) => theme.COLORS.DARK.DARK_600};
     padding: 2.8rem 0;
+    grid-area: footer;
 
     > div {
         display: flex;
@@ -11,10 +12,6 @@ export const Container = styled.footer`
         width: min(120rem, 80%);
         margin: 0 auto;
 
-        > img {
-            margin-left: 3.5rem;
-
-        }
         
         > h5 {
             color: #fff;
@@ -26,7 +23,6 @@ export const Container = styled.footer`
 
         > div {
             width: min(120rem, 90%);
-            > img {margin-left: 0;}
         }
         
     }

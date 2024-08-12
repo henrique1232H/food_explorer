@@ -9,6 +9,7 @@ import { useState } from "react";
 import { PiSignOutBold } from "react-icons/pi";
 import { IoSearchSharp } from "react-icons/io5";
 import Menu from "../Menu";
+import Form from "../Form";
 
 
 export default function Header() {
@@ -32,7 +33,7 @@ export default function Header() {
 
     return (
         <Container>
-            <div>
+            <nav>
 
                 <MobileButton>
                     <button onClick={handleMenu}>
@@ -73,16 +74,11 @@ export default function Header() {
                 </Back>
 
 
-                    {
-                        openMenu ? <Menu closeMenu={handleMenu} isAdmin={isAdmin}/> : ""
-                    }
+                {
+                    openMenu ? <Menu closeMenu={handleMenu} isAdmin={isAdmin}/> : ""
+                }
 
-                
-
-                
-                
-
-            </div>
+            </nav>
         </Container>
     )
 }

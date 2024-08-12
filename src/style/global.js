@@ -25,7 +25,7 @@ export default createGlobalStyle`
         color: #fff;
         font-family: "Roboto", sans-serif;
     }
-    
+
     h2 {
         font-size: 32px;
         font-family: "Poppins", sans-serif;

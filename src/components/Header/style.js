@@ -4,19 +4,22 @@ import styled from "styled-components";
 export const Container = styled.header`
     background: ${({theme}) => theme.COLORS.DARK.DARK_600};
     padding: 2.8rem 0;
+    grid-area: header;
 
-    > div {
+    > nav {
         width: min(120rem, 90%);
         margin: 0 auto;
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 3.2rem;
 
 
+        > div > img {
+            margin-right: 3.2rem;
+        }
 
         > button {
             width: 30%;
+            margin: 0 3.2rem;
 
             @media (max-width: 1100px) {
                 width: 40%;

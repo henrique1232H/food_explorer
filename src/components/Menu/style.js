@@ -3,9 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div`
     position: absolute;
     top: 0;
+    left: 0;
     height: 100vh;
     width: 100%;
     background: ${({theme}) => theme.COLORS.DARK.DARK_400};
+    z-index: 1;
 
     @media (min-width: 900px) {
         display: none;
