@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import food from "../../assets/Mask group.png"
+import Carousel from 'react-multi-carousel'
 
 export const Container = styled.div`
     display: grid;
