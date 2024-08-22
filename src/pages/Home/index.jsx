@@ -13,7 +13,7 @@ export default function Home() {
 
   const [dishes, setDish] = useState([])
   const [count, setCount] = useState(0);
-  const [isAdmin, setAdmin] = useState(false)
+  const [isAdmin, setAdmin] = useState(true)
 
   const addDish = (dish) => {
     dish.amount = dish.amount + 1;
@@ -83,7 +83,7 @@ export default function Home() {
               
               {
                 dishes.map((dish, index) => {
-                  return <Card key={index} title={dish.title} description={dish.description} price={dish.price} isAdmin={isAdmin} count={dish.amount} add={() => addDish(dish)} remove={() => removeDish(dish)}/>
+                  return <Card key={index} title={dish.title} description={dish.description} price={dish.price} isAdmin={isAdmin} count={dish.amount} addDish={() => addDish(dish)} removeDish={() => removeDish(dish)}/>
                 })
               }
 

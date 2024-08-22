@@ -66,6 +66,11 @@ export const Back = styled(Link)`
 `
 
 
+export const LinkButton = styled(Link)`
+    width: 30%;
+    margin: 0 14px;
+`
+
 export const MobileButton = styled.div`
 
     > button {

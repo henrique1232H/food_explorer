@@ -1,4 +1,4 @@
-import { Container, Back, MobileButton } from "./style";
+import { Container, Back, MobileButton, LinkButton } from "./style";
 import Input from "../../components/Input"
 import Button from "../../components/Button"
 import { IoMenu } from "react-icons/io5";
@@ -10,11 +10,12 @@ import { PiSignOutBold } from "react-icons/pi";
 import { IoSearchSharp } from "react-icons/io5";
 import Menu from "../Menu";
 import Form from "../Form";
+import { Link } from "react-router-dom";
 
 
 export default function Header() {
 
-    const [isAdmin, setIsAdmin] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(true);
     const [count, setPedido] = useState(0);
     const [removePlaceholder, setRemovePlaceholder] = useState(false);
     const [openMenu, setOpenMenu] = useState(false)
@@ -54,10 +55,18 @@ export default function Header() {
                     text="Busque por pratos ou ingredientes"/>
 
                 {
-                    isAdmin ? 
-                    <Button text="Novo prato"/> 
+                    isAdmin ?
+
+                    <LinkButton to="/add">
+                        <Button text="Novo prato"/> 
+                    </LinkButton>
+                    
                     :
-                    <Button text="Pedidos" receipt count={count} icon={PiReceipt}/>
+
+                    <LinkButton>
+                        <Button text="Pedidos" receipt count={count} icon={PiReceipt}/>
+                    </LinkButton>
+                    
                 }
 
                 <MobileButton>

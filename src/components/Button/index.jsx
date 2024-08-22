@@ -3,15 +3,15 @@ import { Container } from "./style";
 
 
 
-export default function Button({text,  receipt, count,isAdmin, icon: Icon, ...rest}) {
+export default function Button({text,  receipt, price,count,isAdmin, icon: Icon, ...rest}) {
 
     return (
-        <Container {...rest}>
-            {
+        <Container isAdmin={isAdmin} {...rest}>
+            { 
                 Icon && <Icon/>
             }
-
-            <p>{text}</p>
+            
+            <p>{text} {price && <span> &middot; R${price}</span>}</p>
 
             {
                 receipt && <span>({count})</span>

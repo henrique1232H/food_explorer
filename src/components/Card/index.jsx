@@ -4,9 +4,10 @@ import MaskGroup from "../../assets/Mask group-1.png"
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import { GoPencil } from "react-icons/go";
+import Stepper from "../Stepper";
 
 
-export default function Card({title, description, isAdmin, img, count = "00" ,price, heart = false, add, remove}) {
+export default function Card({title, description, isAdmin, img, count = "00" ,price, heart = false, addDish, removeDish}) {
     return (
         <Container heart={heart}>
             
@@ -40,13 +41,9 @@ export default function Card({title, description, isAdmin, img, count = "00" ,pr
             {
                 !isAdmin ? 
                 <div>
-                    <div>
-                        <button onClick={remove}> - </button>
-                        <h4> {count < 10 ? 0 : ""}{count} </h4>
-                        <button onClick={add}> + </button>
-                    </div>
+                    <Stepper count={count} addDish={addDish} removeDish={removeDish} />
 
-                 <Button text="Incluir" />
+                    <Button text="Incluir" />
                 </div>
 
                 : ""

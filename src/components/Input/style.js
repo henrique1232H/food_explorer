@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 
 export const Container = styled.div`
-    background: ${({theme}) => theme.COLORS.DARK.DARK_900};
+    background: ${({theme}) => theme.COLORS.DARK.DARK_800};
     border: none;
     border-radius: 0.8rem;
     width: 100%;

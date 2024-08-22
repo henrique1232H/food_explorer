@@ -8,5 +8,8 @@ export const Container = styled.section`
     margin-bottom: 1rem;
  }
 
+ > div {
+   z-index: 0;
+ }
 
 `

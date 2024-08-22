@@ -12,8 +12,7 @@ export default function Input({text, removePlaceholder, blur,placeholder, icon: 
                 !placeholder ?  
                 <div>
                     {Icon && <Icon />}
-                    <h3 className="placeholderText">{text}
-                </h3>
+                    <h3 className="placeholderText">{text}</h3>
                 </div>
                 :
                 ""
@@ -25,3 +24,4 @@ export default function Input({text, removePlaceholder, blur,placeholder, icon: 
         </Container>
     )
 }
+

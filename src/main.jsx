@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import SignIn from './pages/SignIn/index.jsx'
 import { ThemeProvider } from 'styled-components'
 import theme from './style/theme.js'
 import Global from './style/global.js'

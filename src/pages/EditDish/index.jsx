@@ -3,7 +3,7 @@ import Header from "../../components/Header"
 import Footer from "../../components/Footer";
 
 
-export default function Add() {
+export default function EditDish() {
     return (
         <Container>
             <Header />
