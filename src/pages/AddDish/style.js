@@ -117,7 +117,7 @@ export const Form = styled.form`
 
 export const Select = styled.select`
     width: 100%;
-    padding: 1.5rem;
+    padding: 1.4rem 1.6rem;
     border-radius: 0.4rem;
     background: ${({theme}) => theme.COLORS.DARK.DARK_800};
     color: ${({theme}) => theme.COLORS.LIGHT.LIGHT_400};
@@ -136,4 +136,15 @@ export const Textarea = styled.textarea`
         font-size: 16px;
         font-family: "Roboto", sans-serif;
     }
+`
+
+export const Ingredients = styled.div`
+    width: 100%;
+    background: ${({theme}) => theme.COLORS.DARK.DARK_800};
+    border: none;
+    border-radius: 0.8rem;
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
 `

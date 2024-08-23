@@ -1,5 +1,5 @@
 import { Container, Back, MobileButton, LinkButton } from "./style";
-import Input from "../../components/Input"
+import Input from "../InputHeader"
 import Button from "../../components/Button"
 import { IoMenu } from "react-icons/io5";
 import { PiReceipt } from "react-icons/pi";

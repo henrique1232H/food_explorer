@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Container, Header, Nav } from "./style";
 import { IoMdClose } from "react-icons/io";
 import { IoSearchSharp } from "react-icons/io5";
-import InputMobile from "../InputMobile";
+import Input from "../Input";
 import Footer from "../Footer";
 import Form from "../Form";
 
@@ -23,7 +23,7 @@ export default function Menu({closeMenu, isAdmin}) {
 
             <Nav>
                 <Form>
-                    <InputMobile
+                    <Input
                         icon={IoSearchSharp} 
                         placeholder="Busque por pratos ou ingredientes"
                     />

@@ -1,27 +1,15 @@
+import { Container } from "./style";
 
-import {Container} from "./style"
-
-export default function Input({text, removePlaceholder, blur,placeholder, icon: Icon,...rest}) {
-
-
+export default function Input({placeholder, icon: Icon, ...rest}) {
 
     return (
         <Container>
-
             {
-                !placeholder ?  
-                <div>
-                    {Icon && <Icon />}
-                    <h3 className="placeholderText">{text}</h3>
-                </div>
-                :
-                ""
-            
+                Icon && <Icon />
             }
-            
-            <input onFocus={removePlaceholder} onBlur={blur} {...rest}
-                />
+
+            <input placeholder={placeholder} {...rest} />
+
         </Container>
     )
 }
-
