@@ -5,9 +5,17 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import { GoPencil } from "react-icons/go";
 import Stepper from "../Stepper";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Card({title, description, isAdmin, img, count = "00" ,price, heart = false, addDish, removeDish}) {
+    
+    const navigate = useNavigate();
+
+    const handleEdit = () => {
+        navigate("/edit")
+    }
+    
     return (
         <Container heart={heart}>
             
@@ -20,7 +28,7 @@ export default function Card({title, description, isAdmin, img, count = "00" ,pr
                         }
                     </button>
                     : 
-                    <button>
+                    <button onClick={handleEdit}>
                         <GoPencil size={25}/>
                     </button>
                 }

@@ -13,7 +13,7 @@ export default {
           min: 0
         },
         items: 1,
-        partialVisibilityGutter: 90,
+        partialVisibilityGutter: 210,
         
 
       },

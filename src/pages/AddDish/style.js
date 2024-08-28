@@ -44,6 +44,9 @@ export const Form = styled.form`
 
     > div:nth-child(1) {
 
+        display: flex;
+        align-items: center;
+
         > div:nth-child(2) {
             width: 60%;
 
@@ -143,8 +146,45 @@ export const Ingredients = styled.div`
     background: ${({theme}) => theme.COLORS.DARK.DARK_800};
     border: none;
     border-radius: 0.8rem;
-    padding: 1.4rem 1.6rem;
+    padding: 1.2rem 1.6rem;
     display: flex;
     gap: 2rem;
     align-items: center;
+`
+
+
+export const Upload = styled.div`
+
+    width: 30%;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    > label {
+        > input {
+            display: none;
+        }
+    }
+
+    > label:last-child {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: ${({theme}) => theme.COLORS.DARK.DARK_800};
+        color: #fff;
+        padding: 1.2rem 1.6rem;
+        border-radius: 1rem;
+        cursor: pointer;
+
+        > svg {
+            font-size: 2.4rem;
+        }
+    }
+`
+
+export const UploadImage = styled.input`
+
 `

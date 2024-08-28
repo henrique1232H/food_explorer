@@ -69,6 +69,11 @@ export const Back = styled(Link)`
 export const LinkButton = styled(Link)`
     width: 30%;
     margin: 0 14px;
+
+    @media (max-width: 900px) {
+        display: none;
+    }
+
 `
 
 export const MobileButton = styled.div`
@@ -80,7 +85,7 @@ export const MobileButton = styled.div`
 
     @media (max-width: 900px) {
         > button {
-            display: block;
+                display: block;
                 background: none;
                 border: none;
                 display: flex;

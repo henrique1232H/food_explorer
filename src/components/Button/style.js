@@ -12,11 +12,13 @@ export const Container = styled.button`
     align-items: center;
     justify-content: center;
     gap:  4px;
+    transition: background 200ms ease-in;
 
     > svg {
         font-size: 22px;
     }
-    &:active {
-        background: ${({theme}) => theme.COLORS.TINTS.TOMATO_200};
+
+    &:hover {
+        background: ${({theme}) => theme.COLORS.TINTS.TOMATO_400};
     }
 `

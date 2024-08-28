@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     > main {
@@ -25,8 +26,7 @@ export const Container = styled.div`
 
                 > div:last-child {
                     display: flex;
-
-                    
+                    width: 100%;                    
                 }
             }
         }
@@ -83,5 +83,21 @@ export const Tags = styled.div`
         display: grid;
         grid-template-columns: repeat(3, 140px);
         row-gap: 20px;
+    }
+`
+
+
+export const Edit = styled(Link)`
+
+    width: 20%;
+
+
+    @media (max-width: 900px) {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
     }
 `

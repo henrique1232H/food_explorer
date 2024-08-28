@@ -1,4 +1,4 @@
-import { Container, Form, Ingredients, Select, Textarea } from "./style";
+import { Container, Form, Ingredients, Select, Textarea, Upload } from "./style";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ButtonBack from "../../components/ButtonBack";
@@ -6,6 +6,7 @@ import Main from "../../components/Main";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import TagItem from "../../components/TagItem";
+import { FiUpload } from "react-icons/fi";
 
 
 export default function AddDish() {
@@ -18,10 +19,24 @@ export default function AddDish() {
 
                     <Form action="get">
                         <div>
-                            <div>
-                                <label htmlFor="image">Imagem do prato</label>
-                                <Input type="file" id="image" accept="image/png, image/jpeg"/>
-                            </div>
+                            <Upload>
+                                <label htmlFor="avatar">Imagem do prato</label>
+
+                                <label htmlFor="avatar">
+                                    <FiUpload />
+
+                                    <p>Selecione avatar</p>
+
+                                    <input
+                                        id="avatar"
+                                        type="file"
+                                        accept="image/png, image/jpeg"
+                                    />
+
+                                </label>
+
+                                
+                            </Upload>
 
                             <div>
                                 <label htmlFor="Name">Nome</label>

@@ -10,6 +10,13 @@ export const Container = styled.section`
 
  > div {
    z-index: 0;
+   
+
+   @media (max-width: 900px) {
+     > button {
+       display: none;
+      }
+   }
  }
 
 `

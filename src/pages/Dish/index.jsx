@@ -1,7 +1,6 @@
-import { Container, Tags } from "./style";
+import { Container, Tags, Edit } from "./style";
 import Header from "../../components/Header"
 import Footer from "../../components/Footer";
-import { Link } from "react-router-dom";
 import TagDiv from "../../components/Tag";
 import MaskGroup from "../../assets/Mask group-3.png"
 import Stepper from "../../components/Stepper";
@@ -15,7 +14,7 @@ export default function Dish() {
     const [count, setCount] = useState(0)
     const [dish, setDish] = useState([])
     const [tags, setTags] = useState([])
-    const [isAdmin, setIsAdmin] = useState(true)
+    const [isAdmin, setIsAdmin] = useState(false)
 
     useEffect(() => {
         setTags([{title: "Salada"}, {title: "Salada"}, {title: "Salada"},{title: "Salada"}, {title: "Salada"}, {title: "Salada"},{title: "Salada"}])
@@ -57,9 +56,9 @@ export default function Dish() {
                                 :
 
                                 <div>
-                                    <Link to="/edit">
+                                    <Edit to="/edit">
                                         <Button text="Editar Prato" isAdmin={isAdmin} />
-                                    </Link>
+                                    </Edit>
 
                                 </div>
                         }
