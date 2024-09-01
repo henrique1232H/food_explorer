@@ -8,12 +8,15 @@ import Card from '../../components/Card'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css';
 import responsiveCarousel from '../../components/responsiveCarousel'
+import { useAuth } from '../../hooks/auth'
 
 export default function Home() {
 
+  const {admin} = useAuth()
+
   const [dishes, setDish] = useState([])
   const [count, setCount] = useState(0);
-  const [isAdmin, setAdmin] = useState(true)
+  const [isAdmin, setAdmin] = useState(admin)
 
   const addDish = (dish) => {
     dish.amount = dish.amount + 1;

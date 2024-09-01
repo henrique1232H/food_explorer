@@ -11,14 +11,16 @@ import { IoSearchSharp } from "react-icons/io5";
 import Menu from "../Menu";
 import Form from "../Form";
 import { Link } from "react-router-dom";
-
+import { useAuth } from "../../hooks/auth";
 
 export default function Header() {
 
-    const [isAdmin, setIsAdmin] = useState(true);
+    const {admin} = useAuth()
+
+    const [isAdmin, setIsAdmin] = useState(admin);
     const [count, setPedido] = useState(0);
     const [removePlaceholder, setRemovePlaceholder] = useState(false);
-    const [openMenu, setOpenMenu] = useState(false)
+    const [openMenu, setOpenMenu] = useState(false);
 
     const handleRemovePlaceholder = (event) => {
         if(event !== "") {

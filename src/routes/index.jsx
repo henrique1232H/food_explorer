@@ -2,16 +2,17 @@ import { BrowserRouter } from "react-router-dom";
 import AuthRoutes from "./auth.routes";
 import AppUserRoutes from "./appUser.routes";
 import AppAdmin from "./appAdmin.routes";
+import { useAuth } from "../hooks/auth";
 
 export default function Routes() {
 
-    let userExists = true
+    const {user} = useAuth();
 
     return (
         <BrowserRouter>
             {
-                userExists ? <AppUserRoutes /> : <AppAdmin/> 
-            }            
+                !user ? <AuthRoutes /> : <AppUserRoutes/>
+            }
         </BrowserRouter>
     )
 }

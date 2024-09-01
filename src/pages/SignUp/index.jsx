@@ -2,13 +2,34 @@ import { useState } from 'react'
 import { Container, Form } from './style'
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import { Navigate, Link} from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
+import {api} from "../../services/api"
 
 export default function SignUp() {
  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("")
+
+  const navigate = useNavigate()
+
+  function handleCreateUser(e) {
+    e.preventDefault()
+
+    if(password.length < 6) {
+      alert("Sua senha deve conter no mínimo 6 caracteres")
+      return
+    }
+
+    api.post("/auth", {name, password, email}).then(e => {
+      console.log(e)
+      alert("Usuário Criado!")
+    });
+    
+
+    navigate("/")
+  
+  }
 
   return (
     <Container>
@@ -53,13 +74,13 @@ export default function SignUp() {
           </div>
 
           <div>
-            <Button text="Criar uma conta"/>
+            <Button text="Criar uma conta" onClick={e => handleCreateUser(e)}/>
           </div>
 
         </Form>
           
         <Link to="/">
-          <a href="#"> Já tenho uma conta</a>
+          Já tenho uma conta
         </Link>
         
       </div>
