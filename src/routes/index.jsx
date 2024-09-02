@@ -1,7 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import AuthRoutes from "./auth.routes";
 import AppUserRoutes from "./appUser.routes";
-import AppAdmin from "./appAdmin.routes";
 import { useAuth } from "../hooks/auth";
 
 export default function Routes() {

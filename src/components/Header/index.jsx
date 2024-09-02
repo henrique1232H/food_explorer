@@ -15,7 +15,7 @@ import { useAuth } from "../../hooks/auth";
 
 export default function Header() {
 
-    const {admin} = useAuth()
+    const {admin, signOut} = useAuth()
 
     const [isAdmin, setIsAdmin] = useState(admin);
     const [count, setPedido] = useState(0);
@@ -80,7 +80,7 @@ export default function Header() {
                     </button>
                 </MobileButton>
 
-                <Back to="/">
+                <Back to="/" onClick={signOut}>
                     <PiSignOutBold />
                 </Back>
 

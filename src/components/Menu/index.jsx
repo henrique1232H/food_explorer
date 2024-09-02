@@ -5,8 +5,12 @@ import { IoSearchSharp } from "react-icons/io5";
 import Input from "../Input";
 import Footer from "../Footer";
 import Form from "../Form";
+import { useAuth } from "../../hooks/auth";
+
 
 export default function Menu({closeMenu, isAdmin}) {
+
+    const {signOut} = useAuth()
 
     return (
         <Container>
@@ -38,7 +42,7 @@ export default function Menu({closeMenu, isAdmin}) {
                         </li> : ""}
                         
                     <li>
-                        <Link to="/">
+                        <Link to="/" onClick={signOut}>
                             Sair
                         </Link>
                     </li>

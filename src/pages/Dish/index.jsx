@@ -8,13 +8,16 @@ import { useEffect, useState } from "react";
 import Button from "../../components/Button";
 import ButtonBack from "../../components/ButtonBack";
 import Main from "../../components/Main";
+import { useAuth } from "../../hooks/auth";
 
 export default function Dish() {
+
+    const {admin} = useAuth()
 
     const [count, setCount] = useState(0)
     const [dish, setDish] = useState([])
     const [tags, setTags] = useState([])
-    const [isAdmin, setIsAdmin] = useState(false)
+    const [isAdmin, setIsAdmin] = useState(admin)
 
     useEffect(() => {
         setTags([{title: "Salada"}, {title: "Salada"}, {title: "Salada"},{title: "Salada"}, {title: "Salada"}, {title: "Salada"},{title: "Salada"}])
